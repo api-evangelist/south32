@@ -1,0 +1,27 @@
+name: South32 MCP Server
+type: MCPServer
+generated: '2026-10-22'
+method: none
+source:
+- https://south32.net/mcp
+- https://www.south32.net/llms.txt
+description: >-
+  Checked for an official South32 MCP server and found none. Pre-flight contract discovery (2026-10-22)
+  on south32.net and api.south32.net found no OpenAPI, AsyncAPI or GraphQL surface; https://south32.net/mcp
+  answered HTTP 403 with a 403 control, which is the site's bot challenge (front door https://south32.net/
+  also 403) and proves nothing either way. A web search for a South32 API, developer program or MCP server
+  returned nothing from South32. There is no published OpenAPI to derive a candidate tool list from, so
+  this file lists no tools.
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+tools: []
+probes:
+- url: https://south32.net/mcp
+  status: 403
+  verdict: opaque (bot challenge)
+- url: https://south32.net/llms.txt
+  status: 301
+- url: https://www.south32.net/llms.txt
+  status: 404

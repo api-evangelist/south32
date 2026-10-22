@@ -1,23 +1,60 @@
 aid: south32
+
 name: South32
-description: 'South32 is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: South32 is a globally diversified mining and metals company headquartered in Perth, Western Australia, spun out of BHP Billiton in May 2015 and listed on the ASX (S32). It produces commodities including alumina, aluminium, copper, manganese, silver, lead and zinc. It was surfaced via the API Evangelist harvest backlog (australia-apidays-2026); no public developer program or API has been identified, and its website (south32.net) answered our crawler with an HTTP 403 bot challenge.
+
 url: https://raw.githubusercontent.com/api-evangelist/south32/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+- Mining
+- Metals
+- Aluminium
+- Australia
+- Natural Resources
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/south32-hosts.yml
+- type: Vendors
+  url: vendors/south32-vendors.yml
+- type: DomainSecurity
+  url: security/south32-domain-security.yml
 - type: Website
   url: https://south32.net/
+
+apis: []
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: 'Front door https://south32.net/ returned HTTP 403 to a browser User-Agent during pre-flight (2026-10-22); identity facts taken from Wikipedia. Source: https://en.wikipedia.org/wiki/South32 (web search result).'
+  evidence:
+  - url: https://south32.net/
+    status: 403
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

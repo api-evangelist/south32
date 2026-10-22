@@ -1,0 +1,16 @@
+generated: '2026-10-22'
+method: none
+source:
+- https://zapier.com/apps/south32/integrations
+- https://n8n.io/integrations/south32/
+- https://composio.dev/toolkits/south32
+- https://monid.ai/tools/south32
+checked:
+- https://composio.dev/toolkits/south32
+- https://monid.ai/tools/south32
+- https://n8n.io/integrations/south32/
+- https://zapier.com/apps/south32/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
